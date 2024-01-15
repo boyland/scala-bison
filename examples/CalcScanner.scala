@@ -32,8 +32,8 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
    * Translates characters to character classes
    */
    private val ZZ_CMAP_PACKED:String = 
-    "\11\0\1\2\1\1\2\0\1\2\22\0\1\2\7\0\4\3\1\0"+
-    "\1\3\1\0\1\3\12\4\44\0\1\3\uffa1\0";
+    "\u0009\u0000\u0001\u0002\u0001\u0001\u0002\u0000\u0001\u0002\u0012\u0000\u0001\u0002\u0007\u0000\u0004\u0003\u0001\u0000"+
+    "\u0001\u0003\u0001\u0000\u0001\u0003\n\u0004$\u0000\u0001\u0003\uffa1\u0000";
 
   /** 
    * Translates characters to character classes
@@ -45,7 +45,7 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
    */
 
    private val ZZ_ACTION_PACKED_0:String = 
-    "\1\0\1\1\1\2\1\3\1\4\1\5";
+    "\u0001\u0000\u0001\u0001\u0001\u0002\u0001\u0003\u0001\u0004\u0001\u0005";
 
   private def zzUnpackAction() : Array[Int] =  {
     val result:Array[Int] = new Array[Int](6);
@@ -73,7 +73,7 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
    */
 
    private val ZZ_ROWMAP_PACKED_0:String = 
-    "\0\0\0\5\0\12\0\17\0\12\0\24";
+    "\u0000\u0000\u0000\u0005\u0000\n\u0000\u000f\u0000\n\u0000\u0014";
 
   private def zzUnpackRowMap() : Array[Int] =  {
     val result:Array[Int] = new Array[Int](6);
@@ -99,8 +99,8 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
    */
 
    private val ZZ_TRANS_PACKED_0:String = 
-    "\1\2\1\3\1\4\1\5\1\6\1\2\13\0\1\4"+
-    "\6\0\1\6";
+    "\u0001\u0002\u0001\u0003\u0001\u0004\u0001\u0005\u0001\u0006\u0001\u0002\u000b\u0000\u0001\u0004"+
+    "\u0006\u0000\u0001\u0006";
 
   private def zzUnpackTrans() : Array[Int] =  {
     val result:Array[Int] = new Array[Int](25);
@@ -141,7 +141,7 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
    */
 
    private val ZZ_ATTRIBUTE_PACKED_0:String = 
-    "\1\0\1\1\1\11\1\1\1\11\1\1";
+    "\u0001\u0000\u0001\u0001\u0001\u0009\u0001\u0001\u0001\u0009\u0001\u0001";
 
   private def zzUnpackAttribute() : Array[Int] =  {
     val result:Array[Int] = new Array[Int](6);
@@ -298,7 +298,7 @@ class CalcScanner(private var zzReader : java.io.Reader) extends Iterator[CalcTo
       if (c == -1) {
         return true;
       } else {
-        zzBuffer(zzEndRead) = c toChar;
+        zzBuffer(zzEndRead) = c.toChar;
 	    zzEndRead += 1
         return false;
       }     
