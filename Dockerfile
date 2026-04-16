@@ -9,7 +9,7 @@ ARG SCALA_BISON_JAR_URL="https://github.com/boyland/scala-bison/releases/downloa
 
 WORKDIR /usr/lib
 
-RUN apk add --no-cache bash make gcompat build-base m4 \
+RUN apk add --no-cache bash make gcompat build-base m4 perl flex \
   && apk add --no-cache --virtual=build-dependencies wget ca-certificates
 
 RUN wget -q "https://github.com/scala/scala/releases/download/v${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz" -O - | gunzip | tar x

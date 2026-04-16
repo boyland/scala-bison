@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
+      fail-fast: false
       matrix:
         # 1.875: minimum version stated in scala-bison script
         # 2.3:   last 2.x release, common on older distros
