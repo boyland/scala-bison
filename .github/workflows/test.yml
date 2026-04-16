@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # 1.875: minimum version stated in scala-bison script
+        # 2.3:   last 2.x release, common on older distros
+        # 3.0.5: last 3.0.x before output format changes (different \dot)
+        # 3.5:   default version used in cool-compiler Dockerfile
+        # 3.8.2: latest release
+        bison: ["1.875", "2.3", "3.0.5", "3.5", "3.8.2"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test (bison ${{ matrix.bison }})
+        run: docker build --build-arg BISON_VERSION=${{ matrix.bison }} -t scala-bison-test .
