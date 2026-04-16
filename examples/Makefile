@@ -16,3 +16,8 @@ JavaParser.scala : Java.y
 
 clean :
 	rm -f *.class *Parser.scala *Tokens.scala *~ *.output *.lcoutput *.tab.c
+
+.PHONY: test
+test: Calc.class
+	scala Calc < Calc.input > Calc.actual
+	diff Calc.expected Calc.actual

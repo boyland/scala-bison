@@ -41,6 +41,6 @@ RUN wget -q "${SCALA_BISON_JAR_URL}" -O scala-bison.jar \
 WORKDIR /usr/local/examples
 RUN scala-bison Calc && \
     scalac CalcParserBase.scala CalcScanner.scala CalcParser.scala CalcTokens.scala Calc.scala && \
-    echo "scala-bison Calc test passed"
+    make test
 
 WORKDIR /root
