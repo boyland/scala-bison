@@ -36,7 +36,8 @@ RUN wget -q "${SCALA_BISON_JAR_URL}" -O scala-bison.jar \
   && make compile \
   && make \
   && mkdir -p lib \
-  && cp scala-bison.jar lib/scala-bison-2.13.jar
+  && cp scala-bison.jar lib/scala-bison-2.13.jar \
+  && rm -f scala-bison.jar
 
 WORKDIR /usr/local/examples
 RUN scala-bison Calc && \
