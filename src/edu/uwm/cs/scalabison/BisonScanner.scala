@@ -178,7 +178,7 @@ class BisonScanner(input : Iterator[Char])
   private var savedState : State = null;
 
   /*override*/ def hasNext : Boolean = state != null && state.hasNext;
-  /*override*/ def next : BisonTokens.YYToken = state.next;
+  /*override*/ def next() : BisonTokens.YYToken = state.next;
 
   class InitialState extends State {
     override def hasNext : Boolean = {

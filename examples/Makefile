@@ -2,7 +2,7 @@
 
 all: Calc.class JavaParser.scala
 
-Calc.class : Calc.scala CalcScanner.scala CalcParser.scala CalcTokens.scala CalcParserbase.scala
+Calc.class : Calc.scala CalcScanner.scala CalcParser.scala CalcTokens.scala CalcParserBase.scala
 	scalac Calc.scala CalcScanner.scala CalcParser.scala CalcTokens.scala CalcParserBase.scala
 
 CalcScanner.scala : Calc.lex

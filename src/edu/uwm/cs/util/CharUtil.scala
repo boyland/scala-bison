@@ -10,7 +10,7 @@ object CharUtil {
     case '\b' => "'\\b'";
     case 0 => "'\\0'";
     case _ => {
-      if (ch < 32 || ch > 126) String.format("'\\u%04x'",new java.lang.Integer(ch)) else "'" + ch + "'";
+      if (ch < 32 || ch > 126) String.format("'\\u%04x'",java.lang.Integer.valueOf(ch)) else "'" + ch + "'";
     }
   }
   
